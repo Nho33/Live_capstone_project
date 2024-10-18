@@ -63,31 +63,31 @@ class CartList(generics.ListCreateAPIView):
 
 class CartDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Cart.objects.all()
-    serializer_class = CartSerializer  # Fixed here
+    serializer_class = CartSerializer  
 
 # CartItem views
 class CartItemList(generics.ListCreateAPIView):
     queryset = CartItem.objects.all()
-    serializer_class = CartItemSerializer  # Fixed here
+    serializer_class = CartItemSerializer  
 
 class CartItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = CartItem.objects.all()
-    serializer_class = CartItemSerializer  # Fixed here
+    serializer_class = CartItemSerializer  
 
 # Shipping address views
 class ShippingAddressList(generics.ListCreateAPIView):
     queryset = ShippingAddress.objects.all()
-    serializer_class = ShippingAddressSerializer  # Fixed here
+    serializer_class = ShippingAddressSerializer  
 
 class ShippingAddressDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ShippingAddress.objects.all()
-    serializer_class = ShippingAddressSerializer  # Fixed here
+    serializer_class = ShippingAddressSerializer 
 
 # Payment views
 class PaymentList(generics.ListCreateAPIView):
     queryset = Payment.objects.all()
-    serializer_class = PaymentSerializer  # Fixed here
+    serializer_class = PaymentSerializer  
 
 class PaymentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Payment.objects.all()
-    serializer_class = PaymentSerializer  # Fixed here
+    serializer_class = PaymentSerializer 
