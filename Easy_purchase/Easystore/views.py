@@ -1,6 +1,10 @@
 from rest_framework import generics
-from .models import Product, Category, Customer, Order, OrderItem, Cart, CartItem,  ShippingAddress, Payment
-from .serializers import (CategorySerializer, ProductSerializer, CustomerSerializer, OrderSerializer, OrderItemSerializer, CartSerializer, CartItemSerializer, ShippingAddressSerializer, PaymentSerializer)
+from .models import Product, Category, Customer, Order, OrderItem, Cart, CartItem, ShippingAddress, Payment
+from .serializers import (
+    CategorySerializer, ProductSerializer, CustomerSerializer, 
+    OrderSerializer, OrderItemSerializer, CartSerializer, 
+    CartItemSerializer, ShippingAddressSerializer, PaymentSerializer
+)
 from django.http import HttpResponse
 
 # Create your views here.
@@ -34,7 +38,7 @@ class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
 
-#Order views
+# Order views
 class OrderList(generics.ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
@@ -44,7 +48,6 @@ class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = OrderSerializer
 
 # OrderItem views
-
 class OrderItemList(generics.ListCreateAPIView):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
@@ -60,31 +63,31 @@ class CartList(generics.ListCreateAPIView):
 
 class CartDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Cart.objects.all()
-    class_serializer = CartSerializer
+    serializer_class = CartSerializer  # Fixed here
 
 # CartItem views
 class CartItemList(generics.ListCreateAPIView):
     queryset = CartItem.objects.all()
-    class_serializer = CartItemSerializer
+    serializer_class = CartItemSerializer  # Fixed here
 
 class CartItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = CartItem.objects.all()
-    class_serializer = CartItemSerializer
+    serializer_class = CartItemSerializer  # Fixed here
 
-#Shipping address views
+# Shipping address views
 class ShippingAddressList(generics.ListCreateAPIView):
     queryset = ShippingAddress.objects.all()
-    class_serializer = ShippingAddressSerializer
+    serializer_class = ShippingAddressSerializer  # Fixed here
 
 class ShippingAddressDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ShippingAddress.objects.all()
-    class_serializer = ShippingAddressSerializer
+    serializer_class = ShippingAddressSerializer  # Fixed here
 
 # Payment views
 class PaymentList(generics.ListCreateAPIView):
     queryset = Payment.objects.all()
-    class_serializer = PaymentSerializer
+    serializer_class = PaymentSerializer  # Fixed here
 
 class PaymentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Payment.objects.all()
-    class_serializer = PaymentSerializer
+    serializer_class = PaymentSerializer  # Fixed here
